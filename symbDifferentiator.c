@@ -4,21 +4,22 @@
 
 //send 2 args as variable expression
 
-int main(char var, char exp[])
+int main(char *var, char *exp)
 {
-  int s = 0, drv, i;
+  int s = 0;
   
 
-  for (i = 0; exp[i] != '\0'; i++) {
-    if (exp[i] == " ")
-      continue;
-    else if (exp[i] >= '0' && exp[i] <= '9')
-      s = s * 10 + (exp[i] - '0');
+  for (; *exp != '\0'; *exp++) {
+    if (*exp == " ") //skip blank spaces
+      ;
+    else if (*exp >= '0' && *exp <= '9') //if is digit
+      s = s * 10 + (*exp - '0');
   }
   drv = s;
 
   return drv;
 }
+
 
       
       
