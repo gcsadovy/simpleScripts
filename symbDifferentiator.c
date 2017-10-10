@@ -4,8 +4,9 @@
 
 //send 2 args as variable expression
 
-int main(char var, char exp[])
+int main(char *var, char *exp)
 {
+
   int scalar = 0;
   printf ("%s  %s", var, exp);
 
@@ -14,14 +15,16 @@ int main(char var, char exp[])
       continue;
     else if (*exp >= '0' && *exp <= '9')
       scalar = scalar * 10 + (*exp - '0');
+
+  int s = 0;
+  
+
+  for (; *exp != '\0'; *exp++) {
+    if (*exp == " ") //skip blank spaces
+      ;
+    else if (*exp >= '0' && *exp <= '9') //if is digit
+      s = s * 10 + (*exp - '0');
+
   }
   return scalar;
 }
-
-
-
-
-      
-  
-
-  
