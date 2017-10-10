@@ -6,18 +6,16 @@
 
 int main(char var, char exp[])
 {
-  int s = 0, drv, i;
-  
+  int scalar = 0;
+  printf ("%s  %s", var, exp);
 
-  for (i = 0; exp[i] != '\0'; i++) {
-    if (exp[i] == " ")
+  for (; *exp != '\0'; *exp++) {
+    if (*exp == " ")
       continue;
-    else if (exp[i] >= '0' && exp[i] <= '9')
-      s = s * 10 + (exp[i] - '0');
+    else if (*exp >= '0' && *exp <= '9')
+      scalar = scalar * 10 + (*exp - '0');
   }
-  drv = s;
-
-  return drv;
+  return scalar;
 }
 
 
